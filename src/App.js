@@ -4,6 +4,11 @@ import { Counter } from './features/counter/Counter';
 import './App.css';
 
 import {createStore } from 'redux';
+import {
+  INCREMENT,
+  DECREMENT,
+  MULTIPLY
+} from './app/constants';
 
 function counter(state = 0, action) {
   switch (action.type) {
@@ -24,16 +29,12 @@ store.subscribe(() => {
   console.log(`counter state: ${store.getState()}`);
 });
 
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
-const MULTIPLY = 'MULTIPLY';
-
 store.dispatch({ 'type': INCREMENT });
 store.dispatch({ 'type': INCREMENT });
 store.dispatch({ 'type': INCREMENT });
 store.dispatch({ 'type': DECREMENT });
 store.dispatch({ 'type': MULTIPLY, 'factor': 2 });
-store.dispatch({ 'type': MULTIPLY, 'factor': 5 });
+store.dispatch({ 'type': MULTIPLY, 'factor': 3 });
 
 
 function App() {
