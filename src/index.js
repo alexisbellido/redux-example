@@ -28,6 +28,12 @@ const initialState = {
   ]
 }
 
+console.log('start');
+
+setTimeout(() => {
+  console.log('after a few seconds');
+}, 3000);
+
 const store = createStore(todoApp, initialState);
 
 // from basic Redux tutorial
@@ -101,7 +107,6 @@ const url = '//loris-dev.loris.ai:30011/api/v1/onboardings/lyft/';
   console.log(`test data from API`);
   console.log(result.data);
 })();
-
 
 ReactDOM.render(
   <React.StrictMode>
